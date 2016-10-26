@@ -5,6 +5,6 @@
 sudo apt-get update
 
 # Install chef
-sudo apt-get install -y --force-yes chef
+sudo apt-get install -y --allow chef
 
 
