@@ -7,3 +7,27 @@
 # 
 
 
+# Add Oracle JDK to sources list.
+file '/etc/apt/sources.list.d/webupd8team-java.list' do
+    content 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main
+deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main'
+    mode '0755'
+    owner 'root'
+    group 'root'
+end
+
+# Install Oracle JDK
+execute 'add-apt-repository ppa:webupd8team/java'
+execute 'apt-get update'
+execute "install jdk oracle" do
+    command " apt-get install oracle-java8-installer"
+    user "root"
+    action :run
+end
+
+# Define Oracle JDK as default Java compiler
+execute "oracle jdk as default" do
+	command "apt-get install oracle-java8-set-default"
+	user "root"
+	action :run
+end
