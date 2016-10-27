@@ -19,14 +19,14 @@ end
 # Install Oracle JDK
 execute 'apt-get update'
 execute "install jdk oracle" do
-    command " apt-get install oracle-java8-installer"
+    command " apt-get install -y oracle-java8-installer"
     user "root"
     action :run
 end
 
 # Define Oracle JDK as default Java compiler
 execute "oracle jdk as default" do
-	command "apt-get install oracle-java8-set-default"
+	command "apt-get install -y oracle-java8-set-default"
 	user "root"
 	action :run
 end
