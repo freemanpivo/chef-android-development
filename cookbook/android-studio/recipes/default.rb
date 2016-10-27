@@ -7,3 +7,30 @@
 # 
 
 
+# Create Android User folder.
+user 'android' do 
+	comment "Android developer user"
+	uid '1234'
+	gid 'root'
+	home '/home/android'
+	shell '/bin/bash'
+	action :create
+end
+
+# Defines android user folder owner and permissions.
+directory '/home/android' do
+	owner 'android'
+	mode '0755'
+	action :create
+	not_if {File.exist?("/home/android/")}
+end
+
+#Install Dependencies for amd64 OS.
+execute "installing libs for amd64 architecture"
+	command <<EOH
+	apt-get install -y --force-yes lib32z1 
+	lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+	EOH
+	user "root"
+	action :run
+end
