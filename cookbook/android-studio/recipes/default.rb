@@ -27,10 +27,8 @@ end
 
 #Install Dependencies for amd64 OS.
 execute "installing libs for amd64 architecture"
-	command <<EOH
-	apt-get install -y --force-yes lib32z1 
-	lib32ncurses5 lib32bz2-1.0 lib32stdc++6
-	EOH
+	command "apt-get install -y --force-yes lib32z1 
+	lib32ncurses5 lib32bz2-1.0 lib32stdc++6"
 	user "root"
 	action :run
 end
