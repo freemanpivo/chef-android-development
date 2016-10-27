@@ -17,7 +17,6 @@ deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main'
 end
 
 # Install Oracle JDK
-execute 'add-apt-repository ppa:webupd8team/java'
 execute 'apt-get update'
 execute "install jdk oracle" do
     command " apt-get install oracle-java8-installer"
