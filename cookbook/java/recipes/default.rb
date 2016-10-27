@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-recipe-android
-# Recipe:: default.rb
+# Recipe:: default.rb - Java Recipe
 # 
 # Copyright 2016, Pedro Ivo de Andrade
 #
