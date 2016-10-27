@@ -5,9 +5,9 @@
 sudo apt-get update
 
 # Install git
-sudo apt-get install -y --allow git
+sudo apt-get install -y git
 
 # Install chef
-sudo apt-get install -y --allow chef
+sudo apt-get install -y chef
 
 
