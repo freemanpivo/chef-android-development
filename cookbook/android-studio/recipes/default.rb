@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-recipe-android
-# Recipe:: default.rb
+# Recipe:: default.rb - Android Studio Recipe
 # 
 # Copyright 2016, Pedro Ivo de Andrade
 #
@@ -57,3 +57,12 @@ remote_file '/home/android/android-studio/android-studio.zip' do
     mode '0755'
     action :create
 end
+
+# Unzip Android Studio
+execute "unzipping Android Studio" do
+    command "unzip /home/android/android-studio/android-studio.zip -d /home/android/android-studio"
+    user "android"
+    action :run
+    not_if {File.exist?("/home/android/android-studio/android-studio")}
+end
+
