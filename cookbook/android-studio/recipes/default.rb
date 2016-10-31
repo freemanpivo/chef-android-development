@@ -66,3 +66,30 @@ execute "unzipping Android Studio" do
     not_if {File.exist?("/home/android/android-studio/android-studio")}
 end
 
+# Android SDK Settings
+android_sdk_file = "android-sdk_r24.4.1-linux.tgz"
+android_sdk_link = "https://dl.google.com/android/" + android_sdk_file
+
+# Download SDK from android_sdk_link
+remote_file 'Downloading SDK... /home/android/android-studio/android-sdk.tgz' do
+    source android_sdk_link
+    owner 'android'
+    mode '0755'
+    action :create
+end
+
+# Untar the downloaded file
+execute "Untar SDK File..." do
+    command "tar -xvzf /home/android/android-studio/android-sdk.tgz -C /home/android/android-studio --strip-components=1"
+    user "android"
+    action :run
+    not_if {File.exist?("/home/android/android-studio/tools")}
+end
+
+# Update SDK in background mode
+execute "UPDATING SDK..." do
+    command "/home/android/android-studio/tools/android update sdk --no-ui"
+    user "android"
+    action :run
+end
+
