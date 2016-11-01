@@ -21,6 +21,17 @@ This is a recipe for installing android studio development environment. It is co
 
 # Installation Steps
 
-1. Download or clone this repository,
-2. Execute "sudo chmod +x install.sh" in downloaded clone folder,
-3. Wait for complete setup.
+- Download or clone this repository,
+- Execute command in downloaded clone folder, to give permissions:
+
+```bash
+      $ sudo chmod +x install.sh
+```
+
+- Execute the command to run recipe setup:
+
+```bash
+    $ sudo ./install.sh
+```
+
+- Wait for complete setup.
