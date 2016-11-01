@@ -10,4 +10,6 @@ sudo apt-get install -y git
 # Install chef
 sudo apt-get install -y chef
 
+# Install all recipes
+sudo chef-apply cookbook/android-studio/recipes/default.rb
 
