@@ -11,5 +11,8 @@ sudo apt-get install -y git
 sudo apt-get install -y chef
 
 # Install all recipes
+sudo chef-apply cookbook/java/recipes/default.rb
 sudo chef-apply cookbook/android-studio/recipes/default.rb
+sudo chef-apply cookbook/virtualbox/recipes/default.rb
+sudo chef-apply cookbook/genymotion/recipes/default.rb
 
